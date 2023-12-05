@@ -18,13 +18,13 @@ else
 	@[ ! -f $(GOPATH)/bin/buf ] || exit 0 && \
 	tmp=$$(mktemp -d) && cd $$tmp && \
 	sudo curl -L -o buf \
-		https://github.com/bufbuild/buf/releases/download/v1.28.1/buf-Linux-x86_64 && \
+		https://github.com/bufbuild/buf/releases/download/v$(BUF_VERSION)/buf-Linux-x86_64 && \
 	sudo mv buf $(GOPATH)/bin/buf && \
 	chmod +x $(GOPATH)/bin/buf
 endif
 
 .PHONY: gen
-gen:
+gen: buf-install
 	@$(GOPATH)/bin/buf generate
 	@for dir in $(CURDIR)/$$dir/gen/go/*/; do \
 	  cd $$dir && \
