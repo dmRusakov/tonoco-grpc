@@ -24,7 +24,7 @@ else
 endif
 
 .PHONY: gen
-gen: buf-install
+gen:
 	@$(GOPATH)/bin/buf generate
 	@for dir in $(CURDIR)/$$dir/gen/go/*/; do \
 	  cd $$dir && \
@@ -32,11 +32,11 @@ gen: buf-install
   	done
 
 .PHONY: lint
-lint: buf-install
+lint:
 	@$(GOPATH)/bin/buf lint --config buf.yaml
 
 .PHONY: format
-format: buf-install
+format:
 	@$(GOPATH)/bin/buf format
 
 
