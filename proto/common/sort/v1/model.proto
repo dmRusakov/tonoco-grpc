@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package common.sort.v1;
+
+option go_package = "github.com/tonoco-grpc/gen/go/common/sort/v1;common_sort_v1";
+
+message Sort {
+  string field = 10;
+  string direction = 20;
+}

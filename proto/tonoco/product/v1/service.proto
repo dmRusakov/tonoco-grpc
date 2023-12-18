@@ -5,7 +5,7 @@ package tonoco.product.v1;
 option go_package = "github.com/tonoco-grpc/gen/go/tonoco/product/v1;tonoco_product";
 
 import "proto/tonoco/product/v1/model.proto";
-import "proto/common/error/v1/error.proto";
+import "proto/common/error/v1/model.proto";
 
 service TonocoProductService {
     rpc GetProduct(GetProductRequest) returns (GetProductResponse) {};
