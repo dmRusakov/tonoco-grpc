@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package tonoco.model.v1;
+
+option go_package = "github.com/dmRusakov/tonoco-grpc/gen/go/tonoco/model/v1;tonoco_model_v1";
+
+message Error {
+  optional string message = 10;
+  optional string dev_message = 20;
+  repeated string field = 30;
+  optional string code = 40;
+}

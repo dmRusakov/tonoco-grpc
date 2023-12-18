@@ -1,9 +1,8 @@
 MAKE_PATH=$(GOPATH)/bin:/bin:/usr/bin:/usr/local/bin:$PATH
+BUF_VERSION=1.17.0
 
 .PHONY: generate-grpc
 generate-grpc: clean format gen lint
-
-BUF_VERSION=1.28.1
 
 .PHONY: buf-install
 buf-install:
@@ -24,22 +23,27 @@ else
 endif
 
 .PHONY: gen
-gen:
-	@/home/dm/App/go/bin/buf generate
+gen: buf-install
+	@$(GOPATH)/bin/buf generate
 	@for dir in $(CURDIR)/$$dir/gen/go/*/; do \
 	  cd $$dir && \
 	  go mod init && go mod tidy; \
   	done
 
 .PHONY: lint
-lint:
+lint: buf-install
 	@$(GOPATH)/bin/buf lint --config buf.yaml
 
 .PHONY: format
-format:
+format: buf-install
 	@$(GOPATH)/bin/buf format
 
 
 .PHONY: clean
-clean:
+clean: buf-install
 	@rm -rf ./gen || true
+
+.PHONY: delete
+delete:
+	@rm -rf $(GOPATH)/bin/buf
+

@@ -1,6 +1,6 @@
-version: model
+version: v1
 
-name: buf.build/grpc-contracts/user_service
+name: buf.build/tonoco-grpc/tonoco
 
 lint:
   use:

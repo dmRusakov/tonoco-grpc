@@ -1,20 +1,17 @@
-version: model
+version: v1
 plugins:
-  - remote: buf.build/library/plugins/go:model.27.1-1
+  - remote: buf.build/library/plugins/go:v1.27.1-1
     out: gen/go
     opt:
       - paths=source_relative
-  - remote: buf.build/library/plugins/go-grpc:model.1.0-2
+  - remote: buf.build/library/plugins/go-grpc:v1.1.0-2
     out: gen/go
     opt:
       - paths=source_relative
-  - remote: buf.build/protocolbuffers/plugins/js:v3.19.1-1
-    out: gen/js
+  - remote: buf.build/timostamm/plugins/protobuf-ts:v2.2.2-1
+    out: gen/ts
     opt:
-      - import_style=commonjs
-      - binary
-  - remote: buf.build/protocolbuffers/plugins/python:v21.2.0-1
-    out: gen/python
+      - long_type_string
   - remote: buf.build/grpc-ecosystem/plugins/grpc-gateway:v2.6.0-1
     out: gen/go
     opt:

@@ -1,7 +1,5 @@
 .idea
+.tmp
+*.log
+/app/build
 .DS_Store
-*/.DS_Store
-
-# go mod and sum files
-go.mod
-go.sum
