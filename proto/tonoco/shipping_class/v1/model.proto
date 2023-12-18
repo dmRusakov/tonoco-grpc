@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package tonoco.model.v1;
+package tonoco.shipping_class.v1;
 
-option go_package = "github.com/dmRusakov/tonoco-grpc/gen/go/tonoco/model/v1;proto_tonoco_model";
+option go_package = "github.com/tonoco-grpc/gen/go/tonoco/shipping_class/v1;tonoco_shipping_class_v1";
 
-message ProductStatus {
+message ShippingClass {
   string id = 10;
   string name = 20;
   string slug = 30;

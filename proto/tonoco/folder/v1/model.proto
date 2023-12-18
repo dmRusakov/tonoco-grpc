@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-package tonoco.model.v1;
+package tonoco.folder.v1;
 
-option go_package = "github.com/dmRusakov/tonoco-grpc/gen/go/tonoco/model/v1;proto_tonoco_model";
+option go_package = "github.com/tonoco-grpc/gen/go/tonoco/folder/v1;tonoco_folder_v1";
 
-message SpecificationType {
+message Folder {
   string id = 10;
   string name = 20;
   string slug = 30;
-  string unit = 40;
+  string parent_id = 40;
   bool active = 50;
   int32 order = 60;
   int64 created_at = 70;

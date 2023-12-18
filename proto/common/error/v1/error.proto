@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package tonoco.model.v1;
+package common.error.v1;
 
-option go_package = "github.com/dmRusakov/tonoco-grpc/gen/go/tonoco/model/v1;proto_tonoco_model";
+option go_package = "github.com/tonoco-grpc/gen/go/common/error/v1;common_error_v1";
 
 message Error {
   optional string message = 10;

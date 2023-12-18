@@ -1,4 +1,4 @@
-version: v1
+version: model
 
 name: buf.build/grpc-contracts/user_service
 

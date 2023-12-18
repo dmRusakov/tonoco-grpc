@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package tonoco.model.v1;
+package tonoco.product_category.v1;
 
-option go_package = "github.com/dmRusakov/tonoco-grpc/gen/go/tonoco/model/v1;proto_tonoco_model";
+option go_package = "github.com/tonoco-grpc/gen/go/tonoco/product_category/v1;tonoco_product_category_v1";
 
 message ProductCategory {
   string id = 10;

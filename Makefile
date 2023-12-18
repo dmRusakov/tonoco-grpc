@@ -3,7 +3,7 @@ MAKE_PATH=$(GOPATH)/bin:/bin:/usr/bin:/usr/local/bin:$PATH
 .PHONY: generate-grpc
 generate-grpc: clean format gen lint
 
-BUF_VERSION=1.17.0
+BUF_VERSION=1.28.1
 
 .PHONY: buf-install
 buf-install:
@@ -25,7 +25,7 @@ endif
 
 .PHONY: gen
 gen:
-	@$(GOPATH)/bin/buf generate
+	@/home/dm/App/go/bin/buf generate
 	@for dir in $(CURDIR)/$$dir/gen/go/*/; do \
 	  cd $$dir && \
 	  go mod init && go mod tidy; \
