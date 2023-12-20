@@ -1,5 +1,5 @@
 MAKE_PATH=$(GOPATH)/bin:/bin:/usr/bin:/usr/local/bin:$PATH
-BUF_VERSION=1.28.0
+BUF_VERSION=1.28.1
 
 .PHONY: buf-install
 buf-install:
