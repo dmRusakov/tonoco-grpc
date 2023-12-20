@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package tonoco.model.v1;
 
-option go_package = "github.com/dmRusakov/tonoco-grpc/gen/go/tonoco/model/v1;tonoco_model_v1";
+option go_package = "github.com/dmRusakov/tonoco/gen/go/tonoco/model/v1;tonoco_model_v1";
 
 message ProductCategory {
   string id = 10;
