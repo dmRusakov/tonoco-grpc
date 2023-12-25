@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package tonoco.product.v1;
+
+option go_package = "github.com/dmRusakov/tonoco-grpc/gen/go/tonoco/product/v1;tonoco_product_v1";
+
+import "google/api/annotations.proto";
+import "proto/tonoco/product/v1/product.proto";
+import "proto/tonoco/error/v1/error.proto";
+
+service TonocoProductService {
+    rpc GetProduct(GetProductRequest) returns (GetProductResponse) {
+        option (google.api.http) = {
+            get: "/v1/product/{id}"
+        };
+    };
+    rpc ListProducts(ListProductsRequest) returns (ListProductsResponse) {
+        option (google.api.http) = {
+            get: "/v1/product"
+        };
+    };
+    rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {
+        option (google.api.http) = {
+            post: "/v1/product"
+            body: "*"
+        };
+    };
+    rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse) {
+        option (google.api.http) = {
+            put: "/v1/product/{id}"
+            body: "*"
+        };
+    };
+    rpc PatchProduct(PatchProductRequest) returns (PatchProductResponse) {
+        option (google.api.http) = {
+            patch: "/v1/product/{id}"
+            body: "*"
+        };
+    };
+    rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {
+        option (google.api.http) = {
+            delete: "/v1/product/{id}"
+            body: "*"
+        };
+    };
+}
+
+//GetProduct
+message GetProductRequest {
+    string id = 1;
+}
+
+message GetProductResponse {
+    Product product = 10;
+    optional error.v1.Error error = 999;
+}
+
+// ListProducts
+message ListProductsRequest {
+    repeated string id = 1;
+    repeated string category_id = 20;
+    optional string order_from = 30;
+    optional string order_to = 40;
+}
+
+message ListProductsResponse {
+    Product product = 10;
+    int32 total_size = 20;
+    optional error.v1.Error error = 999;
+}
+
+// CreateProduct
+message CreateProductRequest {
+    Product product = 10;
+}
+
+message CreateProductResponse {
+    Product product = 10;
+    optional error.v1.Error error = 999;
+}
+
+// UpdateProduct
+message UpdateProductRequest {
+    Product product = 10;
+}
+
+message UpdateProductResponse {
+    Product product = 10;
+    optional error.v1.Error error = 999;
+}
+
+// PatchProduct
+message PatchProductRequest {
+    string id = 10;
+    optional string sku = 20;
+    optional string name = 30;
+    optional string short_description = 40;
+    optional string description = 50;
+    optional int32 order = 60;
+    optional string status_id = 70;
+    optional string slug = 80;
+    optional float regular_price = 90;
+    optional float sale_price = 100;
+    optional float factory_price = 110;
+    optional bool is_taxable = 120;
+    optional int32 quantity = 130;
+    optional int64 return_to_stock_date = 140;
+    optional bool is_track_stock = 150;
+    optional string shipping_class_id = 160;
+    optional float shipping_weight = 170;
+    optional float shipping_width = 180;
+    optional float shipping_height = 190;
+    optional float shipping_length = 200;
+    optional string seo_title = 210;
+    optional string seo_description = 220;
+    optional string gtin = 230;
+    optional string google_product_category = 240;
+    optional string google_product_type = 250;
+    optional int64 created_at = 260;
+    optional string created_by = 270;
+    optional int64 updated_at = 280;
+    optional string updated_by = 290;
+}
+
+message PatchProductResponse {
+    Product product = 10;
+    optional error.v1.Error error = 999;
+}
+
+// DeleteProduct
+message DeleteProductRequest {
+    string id = 10;
+}
+
+message DeleteProductResponse {
+    optional error.v1.Error error = 999;
+}
