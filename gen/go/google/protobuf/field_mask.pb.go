@@ -240,10 +240,10 @@ const (
 // As an example, consider the following message declarations:
 //
 //	message Profile {
-//	  User user = 1;
+//	  user user = 1;
 //	  Photo photo = 2;
 //	}
-//	message User {
+//	message user {
 //	  string display_name = 1;
 //	  string address = 2;
 //	}
