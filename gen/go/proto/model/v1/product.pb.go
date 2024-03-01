@@ -32,7 +32,7 @@ type Product struct {
 	Description           string  `protobuf:"bytes,50,opt,name=description,proto3" json:"description,omitempty"`
 	Order                 int32   `protobuf:"varint,60,opt,name=order,proto3" json:"order,omitempty"`
 	StatusId              string  `protobuf:"bytes,70,opt,name=status_id,json=statusId,proto3" json:"status_id,omitempty"`
-	Slug                  string  `protobuf:"bytes,80,opt,name=slug,proto3" json:"slug,omitempty"`
+	Url                   string  `protobuf:"bytes,80,opt,name=url,proto3" json:"url,omitempty"`
 	RegularPrice          float32 `protobuf:"fixed32,90,opt,name=regular_price,json=regularPrice,proto3" json:"regular_price,omitempty"`
 	SalePrice             float32 `protobuf:"fixed32,100,opt,name=sale_price,json=salePrice,proto3" json:"sale_price,omitempty"`
 	FactoryPrice          float32 `protobuf:"fixed32,110,opt,name=factory_price,json=factoryPrice,proto3" json:"factory_price,omitempty"`
@@ -137,9 +137,9 @@ func (x *Product) GetStatusId() string {
 	return ""
 }
 
-func (x *Product) GetSlug() string {
+func (x *Product) GetUrl() string {
 	if x != nil {
-		return x.Slug
+		return x.Url
 	}
 	return ""
 }

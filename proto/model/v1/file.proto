@@ -7,7 +7,7 @@ option go_package = "github.com/dmRusakov/tonoco-grpc/gen/go/proto/model/v1;mode
 message File {
   string id = 10;
   string name = 20;
-  string slug = 30;
+  string url = 30;
   bool active = 40;
   int32 order = 50;
   int64 created_at = 60;

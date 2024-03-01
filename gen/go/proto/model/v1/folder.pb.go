@@ -27,7 +27,7 @@ type Folder struct {
 
 	Id        string `protobuf:"bytes,10,opt,name=id,proto3" json:"id,omitempty"`
 	Name      string `protobuf:"bytes,20,opt,name=name,proto3" json:"name,omitempty"`
-	Slug      string `protobuf:"bytes,30,opt,name=slug,proto3" json:"slug,omitempty"`
+	Url       string `protobuf:"bytes,30,opt,name=url,proto3" json:"url,omitempty"`
 	ParentId  string `protobuf:"bytes,40,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
 	Active    bool   `protobuf:"varint,50,opt,name=active,proto3" json:"active,omitempty"`
 	Order     int32  `protobuf:"varint,60,opt,name=order,proto3" json:"order,omitempty"`
@@ -83,9 +83,9 @@ func (x *Folder) GetName() string {
 	return ""
 }
 
-func (x *Folder) GetSlug() string {
+func (x *Folder) GetUrl() string {
 	if x != nil {
-		return x.Slug
+		return x.Url
 	}
 	return ""
 }

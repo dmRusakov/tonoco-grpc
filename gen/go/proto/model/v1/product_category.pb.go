@@ -27,7 +27,7 @@ type ProductCategory struct {
 
 	Id               string `protobuf:"bytes,10,opt,name=id,proto3" json:"id,omitempty"`
 	Name             string `protobuf:"bytes,20,opt,name=name,proto3" json:"name,omitempty"`
-	Slug             string `protobuf:"bytes,30,opt,name=slug,proto3" json:"slug,omitempty"`
+	Url              string `protobuf:"bytes,30,opt,name=url,proto3" json:"url,omitempty"`
 	ShortDescription string `protobuf:"bytes,40,opt,name=short_description,json=shortDescription,proto3" json:"short_description,omitempty"`
 	Description      string `protobuf:"bytes,50,opt,name=description,proto3" json:"description,omitempty"`
 	Order            int32  `protobuf:"varint,60,opt,name=order,proto3" json:"order,omitempty"`
@@ -85,9 +85,9 @@ func (x *ProductCategory) GetName() string {
 	return ""
 }
 
-func (x *ProductCategory) GetSlug() string {
+func (x *ProductCategory) GetUrl() string {
 	if x != nil {
-		return x.Slug
+		return x.Url
 	}
 	return ""
 }

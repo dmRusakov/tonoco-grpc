@@ -8,7 +8,7 @@ message SpecificationValue {
   string id = 10;
   string specification_id = 20;
   string name = 30;
-  string slug = 40;
+  string url = 40;
   bool active = 50;
   int32 order = 60;
   int64 created_at = 70;

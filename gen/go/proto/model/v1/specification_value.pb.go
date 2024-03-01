@@ -28,7 +28,7 @@ type SpecificationValue struct {
 	Id              string `protobuf:"bytes,10,opt,name=id,proto3" json:"id,omitempty"`
 	SpecificationId string `protobuf:"bytes,20,opt,name=specification_id,json=specificationId,proto3" json:"specification_id,omitempty"`
 	Name            string `protobuf:"bytes,30,opt,name=name,proto3" json:"name,omitempty"`
-	Slug            string `protobuf:"bytes,40,opt,name=slug,proto3" json:"slug,omitempty"`
+	Url             string `protobuf:"bytes,40,opt,name=url,proto3" json:"url,omitempty"`
 	Active          bool   `protobuf:"varint,50,opt,name=active,proto3" json:"active,omitempty"`
 	Order           int32  `protobuf:"varint,60,opt,name=order,proto3" json:"order,omitempty"`
 	CreatedAt       int64  `protobuf:"varint,70,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
@@ -90,9 +90,9 @@ func (x *SpecificationValue) GetName() string {
 	return ""
 }
 
-func (x *SpecificationValue) GetSlug() string {
+func (x *SpecificationValue) GetUrl() string {
 	if x != nil {
-		return x.Slug
+		return x.Url
 	}
 	return ""
 }

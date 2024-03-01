@@ -27,7 +27,7 @@ type ProductStatus struct {
 
 	Id        string `protobuf:"bytes,10,opt,name=id,proto3" json:"id,omitempty"`
 	Name      string `protobuf:"bytes,20,opt,name=name,proto3" json:"name,omitempty"`
-	Slug      string `protobuf:"bytes,30,opt,name=slug,proto3" json:"slug,omitempty"`
+	Url       string `protobuf:"bytes,30,opt,name=url,proto3" json:"url,omitempty"`
 	Order     uint32 `protobuf:"varint,40,opt,name=order,proto3" json:"order,omitempty"`
 	Active    bool   `protobuf:"varint,50,opt,name=active,proto3" json:"active,omitempty"`
 	CreatedAt uint32 `protobuf:"varint,60,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
@@ -82,9 +82,9 @@ func (x *ProductStatus) GetName() string {
 	return ""
 }
 
-func (x *ProductStatus) GetSlug() string {
+func (x *ProductStatus) GetUrl() string {
 	if x != nil {
-		return x.Slug
+		return x.Url
 	}
 	return ""
 }

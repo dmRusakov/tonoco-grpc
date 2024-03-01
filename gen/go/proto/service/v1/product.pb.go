@@ -479,7 +479,7 @@ type PatchProductRequest struct {
 	Description           *string  `protobuf:"bytes,50,opt,name=description,proto3,oneof" json:"description,omitempty"`
 	Order                 *int32   `protobuf:"varint,60,opt,name=order,proto3,oneof" json:"order,omitempty"`
 	StatusId              *string  `protobuf:"bytes,70,opt,name=status_id,json=statusId,proto3,oneof" json:"status_id,omitempty"`
-	Slug                  *string  `protobuf:"bytes,80,opt,name=slug,proto3,oneof" json:"slug,omitempty"`
+	Url                   *string  `protobuf:"bytes,80,opt,name=url,proto3,oneof" json:"url,omitempty"`
 	RegularPrice          *float32 `protobuf:"fixed32,90,opt,name=regular_price,json=regularPrice,proto3,oneof" json:"regular_price,omitempty"`
 	SalePrice             *float32 `protobuf:"fixed32,100,opt,name=sale_price,json=salePrice,proto3,oneof" json:"sale_price,omitempty"`
 	FactoryPrice          *float32 `protobuf:"fixed32,110,opt,name=factory_price,json=factoryPrice,proto3,oneof" json:"factory_price,omitempty"`
@@ -584,9 +584,9 @@ func (x *PatchProductRequest) GetStatusId() string {
 	return ""
 }
 
-func (x *PatchProductRequest) GetSlug() string {
-	if x != nil && x.Slug != nil {
-		return *x.Slug
+func (x *PatchProductRequest) GetUrl() string {
+	if x != nil && x.Url != nil {
+		return *x.Url
 	}
 	return ""
 }

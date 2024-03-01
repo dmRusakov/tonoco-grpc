@@ -98,7 +98,7 @@ message PatchProductRequest {
     optional string description = 50;
     optional int32 order = 60;
     optional string status_id = 70;
-    optional string slug = 80;
+    optional string url = 80;
     optional float regular_price = 90;
     optional float sale_price = 100;
     optional float factory_price = 110;
