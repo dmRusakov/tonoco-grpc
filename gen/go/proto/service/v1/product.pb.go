@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        (unknown)
-// source: proto/service/v1/product.proto
+// source: proto/service/v1/product_grid.proto
 
 package service_v1
 

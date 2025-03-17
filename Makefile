@@ -1,6 +1,6 @@
 MAKE_PATH=$(GOPATH)/bin:/bin:/usr/bin:/usr/local/bin:$PATH
 BIN_PATH=/home/dm/App/go/bin
-BUF_VERSION=1.28.1
+BUF_VERSION=1.50.1
 
 .PHONY: buf-install
 buf-install:
@@ -21,8 +21,8 @@ else
 endif
 
 .PHONY: gen
-gen: buf-install format clean
-	@$(BIN_PATH)/buf generate
+gen:
+	buf generate
 	@for dir in $(CURDIR)/gen/go/*/; do \
 	  cd $$dir && \
 	  go mod init && go mod tidy; \
